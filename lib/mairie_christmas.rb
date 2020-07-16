@@ -12,8 +12,8 @@ end
 def get_townhall_urls
     page = Nokogiri::HTML(open("http://annuaire-des-mairies.com/val-d-oise.html"))
    urls_array = []
-    page.xpath('//a[contains(@href,"mailto")]').each do |i|
-       urls_array << "http://annuaire-des-mairies.com" 
+    page.xpath('//a[contains(@href,"mailto")]').each do |i|#//*[contains(@class,'lientxt')]/@href
+       urls_array << "http://annuaire-des-mairies.com"#+ i.to_s.delete_prefix('.')
    end
        return urls_array
 end
@@ -21,5 +21,5 @@ end
 puts get_townhall_urls.each_index {|i| puts get_townhall_email(get_townhall_urls[i])}
 
 
-#//*[contains(@class,'lientxt')]/@href
-#+ i.to_s.delete_prefix('.')
+
+
