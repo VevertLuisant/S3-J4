@@ -6,13 +6,13 @@ require 'byebug'
 
 def crypto_market
 
-  url = "https://coinmarketcap.com/all/views/all/"
-  unparsed_page = HTTParty.get(url)
-  parsed_page = Nokogiri::HTML(unparsed_page)
+    url = "https://coinmarketcap.com/all/views/all/"
+    unparsed_page = HTTParty.get(url)
+    parsed_page = Nokogiri::HTML(unparsed_page)
 
-  cryptos = Array.new(0)
+    cryptos = Array.new(0)
 
-  parsed_page.css(".cmc-table-row").each.with_index do |line, index|
+    parsed_page.css(".cmc-table-row").each.with_index do |line, index|
     symbol = line.css(".cmc-table__cell--sort-by__symbol").text
     price = line.css(".cmc-table__cell--sort-by__price").text.gsub("$", "").gsub(",", "").to_f
     cryptos[index] = { symbol => price }
