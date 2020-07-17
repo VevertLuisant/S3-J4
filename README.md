@@ -7,7 +7,7 @@ La première s'appuie sur le HTTParty (cf dark_trading)
 
 La seconde reprend celle proposée dans le cours.
 
-Petit précision: le "Mairie Christmas" n'est pas tout à fait stable... J'ai un souci au niveau de la ligne
+Petit précision: le "Mairie Christmas" n'est pas tout à fait stable... J'ai un souci au niveau de la ligne 15 que je n'arrive pas à solutionner. A voir avec le correcteur.
 
 
 Le troisième, je n'ai point pu le faire...
