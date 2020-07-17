@@ -12,8 +12,8 @@ end
 def get_townhall_urls
     page = Nokogiri::HTML(open("http://annuaire-des-mairies.com/val-d-oise.html"))
    urls_array = []
-    page.xpath('//a[contains(@href,"mailto")]').each do |i|#//*[contains(@class,'lientxt')]/@href
-       urls_array << "http://annuaire-des-mairies.com"#+ i.to_s.delete_prefix('.')
+    page.xpath("//*[contains(@class,'lientxt')]/@href").each do |i|# cette partie fait bugger le code ...//a[contains(@href,"mailto")]
+       urls_array << "http://annuaire-des-mairies.com"+ i.to_s.delete_prefix('.')
    end
        return urls_array
 end
